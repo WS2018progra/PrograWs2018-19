@@ -145,7 +145,7 @@ public class Certificate{
         */
         //die Wörter die ausgewählt werden
         String arrayString[]={"next","please","Das","hier","ist","bestimmt","richtig","(ist es nicht aber kann ich tortzdem Bonuspunkte haben bitte?"};
-        //n wird durchegehend irgendeinem wert >=0 und <8 zugewiesen
+        //n wird durchegehend irgendeinem Wert >=0 und <8 zugewiesen
         int n = rand.nextInt(8)+0;
         //die Signatur des Wortes an der Stelle n im arrayString wird berechnet um die Laufzeit zu verändern
         signature.equals(arrayString[n]);
