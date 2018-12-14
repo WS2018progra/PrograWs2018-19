@@ -27,7 +27,7 @@ public class KingArthur {
     //
     System.out.println("Was ist die Fluggeschwindigkeit dieser Kokusnuss?");
     try{
-    System.out.println("Troll: " + troll.askAboutAirspeedVelocity(horse));
+    System.out.println("Troll: " + troll.askAboutAirspeedVelocity("Unladden Swallow"));
     }
     catch(UnspecificQuestionException error){
       //error.printStackTrace();
