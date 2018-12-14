@@ -44,19 +44,19 @@ public class Certificate{
      * @return Certificate das aus dem Inputstring erstellt wurde
      */
     public static Certificate fromString(String input){
-        Algorithm alg;Pair[] pair;Signature sign;
+        Algorithm alg;Pair[] pair;
         String[] temp=input.split(";");
-        String Header=temp[0];
-        String Body=temp[1];
+        String header=temp[0];
+        String body=temp[1];
         String signature=temp[2];
 
-        if(Header.equals("HMAC_MD5")){
+        if(header.equals("HMAC_MD5")){
             alg=Algorithm.HMAC_MD5;
         }
-        else if(Header.equals("HMAC_SHA1")){
+        else if(header.equals("HMAC_SHA1")){
             alg=Algorithm.HMAC_SHA1;
         }
-        else if(Header.equals("HMAC_SHA256")){
+        else if(header.equals("HMAC_SHA256")){
             alg=Algorithm.HMAC_SHA256;
         }
         else{
@@ -64,7 +64,7 @@ public class Certificate{
             alg=null;
         }
 
-        String[] tmp=Body.split(",");
+        String[] tmp=body.split(",");
         pair=new Pair[tmp.length];
         for(int i=0;i<tmp.length;i++){
             pair[i]=Pair.fromString(tmp[i]);
