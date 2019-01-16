@@ -35,20 +35,20 @@ public class Optional<T> {
 
 	//a)
 	public <R> Optional<R> map(Function<T, R> mapper) {
-		if(this.value==null)return Optional.empty();
+		if(!this.isPresent())return Optional.empty();
 		else return new Optional<R>(mapper.apply(this.get()));
 	}
 
 	//b)
 	public Optional<T> filter(Predicate<T> tester) {
-		if(this.value==null)return Optional.empty();
+		if(!this.isPresent())return Optional.empty();
 		else return tester.test(this.get()) ? this : Optional.empty();			
 	}
 	
 
 	//c)
 	public <R> R fold(Function<T, R> presentMapper, Supplier<R> emptyReplacer) {
-		if(this.value==null)return emptyReplacer.get();
+		if(!this.isPresent())return emptyReplacer.get();
 		else return presentMapper.apply(this.get());
 	}
 	
